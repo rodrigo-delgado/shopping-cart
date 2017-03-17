@@ -10,4 +10,14 @@ class Products extends CI_Controller {
     //send the data to the views
     $this->load->view('layouts/main', $data);
   }
+
+  public function details($id) {
+    //Get Product Details
+    $data['product'] = $this->Product_model->get_product_details($id);
+
+    //Load View
+    $data['main_content'] = 'details';
+    $this->load->view('layouts/main', $data);
+
+  }
 }

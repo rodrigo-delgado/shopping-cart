@@ -9,4 +9,13 @@ class Product_model extends CI_Model {
     $query = $this->db->get();
     return $query->result();
   }
+
+  public function get_product_details($id) {
+    $this->db->select('*');
+    $this->db->from('products');
+    $this->db->where('id', $id);
+
+    $query = $this->db->get();
+    return $query->row();
+  }
 }
