@@ -17,8 +17,10 @@ class Users extends CI_Controller {
       $this->load->view('layouts/main', $data);
 
     } else {
-
-      echo "Is all good";
+        if($this->User_model->register()) {
+          $this->session->set_flashdata('registered', 'You are now registered and can login');
+          redirect('products');
+        }
     }
   }
 }
