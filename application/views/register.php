@@ -1,3 +1,4 @@
+<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
 <form method="post" action="<?php echo base_url();?>users/register">
               <div class="form-group">
                 <label>First Name*</label>
@@ -23,5 +24,5 @@
                 <label>Confirm Password*</label>
                 <input type="password" class="form-control" name="password2" placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button name="submit" type="submit" class="btn btn-primary">Register</button>
           </form>
