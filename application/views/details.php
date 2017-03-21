@@ -1,6 +1,6 @@
 <div class="row details">
   <div class="col-md-4">
-    <img src="<?php base_url(); ?>assets/images/products/<?php echo $product->image ?>" class="img-responsive" />
+    <img class="img-responsive" src="<?php base_url(); ?>assets/images/products/<?php echo $product->image ?>" />
   </div>
   <div class="col-md-8">
     <h3><?php echo $product->title; ?></h3>

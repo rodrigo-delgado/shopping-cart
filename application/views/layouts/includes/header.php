@@ -8,7 +8,7 @@
     <title>The Gaming Place</title>
 
 
-    <!-- Custom styles for this template -->
+  
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
 
