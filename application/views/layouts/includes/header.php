@@ -8,7 +8,7 @@
     <title>The Gaming Place</title>
 
 
-  
+
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
 
@@ -31,9 +31,9 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php base_url();?>">Home</a></li>
-            <li><a href="<?php base_url();?>user/register">Create Account</a></li>
+            <li><a href="<?php base_url();?>users/register">Create Account</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
+          <form method="post" action="<?php base_url();?>user/register" class="navbar-form navbar-right">
             <div class="form-group">
               <input name="username" type="text" class="form-control" placeholder="Enter Username">
             </div>

@@ -23,4 +23,36 @@ class Users extends CI_Controller {
         }
     }
   }
+
+  public function login() {
+    $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]');
+
+    $username = $this->input->post('username');
+    $password = md5($this->input->post('password'));
+
+    $user_id = $this->User_model->login($username, $password);
+
+    //Validate User
+    if($user_id) {
+      //Create an array of user data
+      $data = array(
+              'user_id'   => $user_id,
+              'username'  => $username,
+              'logged in' => true
+      );
+      //Set session userdata
+      $this->session->set_userdata($data);
+
+      //Set Message
+      $this->session->set_flashdata('pass_login', 'Yup you are logged in');
+      redirect('products');
+
+    } else {
+
+      //Set Error
+      $this->session-set_flashdata('fail_login', 'nope, you need to login');
+      redirect('products');
+    }
+  }
 }
