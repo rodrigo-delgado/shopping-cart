@@ -9,10 +9,10 @@
 
         <?php $i = 1; ?>
           <?php foreach ($this->cart->contents() as $items) : ?>
-            <input type="hidden" name="<?php echo $i.'[rowid]'; ?>" value="<?php echo $items['rowid']; ?>">
+            <input type="hidden"  name="<?php echo $i.'[rowid]'; ?>" value="<?php echo $items['rowid']; ?>">
 
             <tr>
-              <td><input type="text" name="<?php echo $i.'[qty]'; ?>"  value="<?php echo $items['qty']; ?>" maxlength="3" /></td>
+              <td><input type="text" name="<?php echo $i.'[qty]'; ?>" style="color: black;" value="<?php echo $items['qty']; ?>" maxlength="3" /></td>
               <td><?php echo $items['name']; ?></td>
               <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
             </tr>

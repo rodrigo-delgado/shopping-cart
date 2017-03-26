@@ -39,7 +39,7 @@ class Users extends CI_Controller {
       $data = array(
               'user_id'   => $user_id,
               'username'  => $username,
-              'logged in' => true
+              'logged_in' => true
       );
       //Set session userdata
       $this->session->set_userdata($data);
@@ -54,5 +54,15 @@ class Users extends CI_Controller {
       $this->session-set_flashdata('fail_login', 'nope, you need to login');
       redirect('products');
     }
+  }
+
+  public function logout() {
+    //Unset user data
+    $this->session->unset_userdata('logged_in');
+    $this->session->unset_userdata('user_id');
+    $this->session->unset_userdata('username');
+    $this->session->sess_destroy();
+
+    redirect('products');
   }
 }
